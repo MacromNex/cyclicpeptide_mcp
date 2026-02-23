@@ -1,0 +1,42 @@
+{
+  "_description": "Configuration for SMILES structure to sequence conversion",
+  "_source": "Extracted from examples/use_case_2_structure_to_sequence.py",
+
+  "output_format": "txt",
+  "include_analysis": true,
+
+  "sequence_detection": {
+    "method": "pattern_matching",
+    "use_known_structures": true,
+    "fallback_to_inference": true,
+    "confidence_threshold": 0.7
+  },
+
+  "visualization": {
+    "enabled": true,
+    "width": 400,
+    "height": 400,
+    "save_individual_files": true
+  },
+
+  "analysis": {
+    "molecular_composition": true,
+    "ring_analysis": true,
+    "peptide_bond_detection": true,
+    "functional_group_identification": true
+  },
+
+  "output": {
+    "include_confidence_scores": true,
+    "include_structural_analysis": true,
+    "include_quality_assessment": true,
+    "detailed_report": true
+  },
+
+  "processing": {
+    "validate_input": true,
+    "canonicalize_smiles": true,
+    "detect_cyclic": true,
+    "error_handling": "continue"
+  }
+}

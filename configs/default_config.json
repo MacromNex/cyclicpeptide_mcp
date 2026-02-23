@@ -1,0 +1,53 @@
+{
+  "_description": "Default configuration for all cyclic peptide MCP scripts",
+  "_version": "1.0.0",
+
+  "global": {
+    "validate_inputs": true,
+    "error_handling": "continue",
+    "verbose": true,
+    "quality_assessment": true
+  },
+
+  "visualization": {
+    "enabled": false,
+    "width": 400,
+    "height": 400,
+    "format": "svg",
+    "quality": "high"
+  },
+
+  "output": {
+    "create_summaries": true,
+    "include_metadata": true,
+    "timestamp_files": false,
+    "backup_existing": false
+  },
+
+  "processing": {
+    "batch_size": 100,
+    "parallel_processing": false,
+    "max_workers": 4,
+    "memory_limit_mb": 1024
+  },
+
+  "quality": {
+    "min_score": 0,
+    "flag_low_quality": true,
+    "detailed_scoring": true,
+    "include_confidence": true
+  },
+
+  "file_formats": {
+    "preferred_input": ["csv", "txt", "smi", "json"],
+    "preferred_output": ["csv", "json", "txt"],
+    "encoding": "utf-8"
+  },
+
+  "molecular": {
+    "canonicalize_smiles": true,
+    "validate_chemistry": true,
+    "detect_cyclic": true,
+    "standardize_sequences": true
+  }
+}

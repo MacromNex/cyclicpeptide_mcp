@@ -1,0 +1,63 @@
+{
+  "_description": "Configuration for cyclic peptide data preprocessing and standardization",
+  "_source": "Extracted from examples/use_case_6_preprocessing.py",
+
+  "output_format": "csv",
+
+  "standardization": {
+    "canonicalize_smiles": true,
+    "normalize_sequences": true,
+    "remove_duplicates": true,
+    "validate_structures": true,
+    "convert_to_standard_format": true
+  },
+
+  "quality_assessment": {
+    "enable_scoring": true,
+    "min_quality_score": 0,
+    "flag_low_quality": true,
+    "detailed_assessment": true,
+    "calculate_confidence": true
+  },
+
+  "data_cleaning": {
+    "remove_empty": true,
+    "remove_invalid": false,
+    "standardize_format": true,
+    "handle_missing_data": "flag",
+    "trim_whitespace": true
+  },
+
+  "validation": {
+    "validate_smiles": true,
+    "validate_sequences": true,
+    "check_cyclic": true,
+    "detect_data_types": true,
+    "cross_validate": false
+  },
+
+  "processing": {
+    "auto_detect_columns": true,
+    "preserve_original_data": true,
+    "add_quality_columns": true,
+    "add_standardized_columns": true,
+    "batch_processing": true
+  },
+
+  "output": {
+    "include_summary": true,
+    "include_quality_report": true,
+    "save_processing_log": true,
+    "create_backup": false,
+    "compression": false
+  },
+
+  "quality_scoring": {
+    "validity_weight": 25,
+    "completeness_weight": 25,
+    "standardization_weight": 25,
+    "chemical_validity_weight": 25,
+    "cyclic_bonus": 15,
+    "reasonable_size_bonus": 10
+  }
+}

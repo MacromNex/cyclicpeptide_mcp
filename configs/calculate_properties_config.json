@@ -1,0 +1,55 @@
+{
+  "_description": "Configuration for cyclic peptide property calculation",
+  "_source": "Extracted from examples/use_case_4_property_analysis.py",
+
+  "output_format": "json",
+  "include_fingerprints": true,
+  "include_descriptors": true,
+  "include_drug_rules": true,
+
+  "visualization": {
+    "width": 400,
+    "height": 400,
+    "enabled": false
+  },
+
+  "properties": {
+    "molecular_descriptors": [
+      "Exact_Mass",
+      "Molecular_Weight",
+      "Heavy_Atom_Count",
+      "Topological_Polar_Surface_Area",
+      "Crippen_LogP",
+      "Hydrogen_Bond_Donor_Count",
+      "Hydrogen_Bond_Acceptor_Count",
+      "Rotatable_Bond_Count",
+      "Number_of_Rings"
+    ],
+    "fingerprints": [
+      "RDKit_Fingerprint",
+      "Morgan_Fingerprint",
+      "MACCS_Keys",
+      "Daylight_like_Fingerprint"
+    ],
+    "drug_rules": [
+      "Rule_of_Five",
+      "Vebers_Rule",
+      "Ghose_Filter",
+      "Lead_Like"
+    ]
+  },
+
+  "processing": {
+    "validate_smiles": true,
+    "canonicalize_smiles": true,
+    "calculate_3d_descriptors": false,
+    "error_handling": "skip"
+  },
+
+  "output": {
+    "include_bit_vectors": false,
+    "include_quality_assessment": true,
+    "format_numbers": true,
+    "decimal_places": 3
+  }
+}

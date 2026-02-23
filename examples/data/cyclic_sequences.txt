@@ -1,0 +1,4 @@
+Ala(1)--Ala--Gly--Phe--Pro--Val--Phe--Phe(1)
+Pro(1)--Val--Phe--Phe--Ala--Ala--Gly--Phe(1)
+Gly(1)--Phe--Pro--Val--Phe--Phe--Ala--Ala(1)
+Cys(1)--Cys--OH-DL-Val(2)--4OH-Leu--OH-Ile(1)

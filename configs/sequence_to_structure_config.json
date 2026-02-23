@@ -1,0 +1,27 @@
+{
+  "_description": "Configuration for cyclic peptide sequence to structure conversion",
+  "_source": "Extracted from examples/use_case_1_sequence_to_structure.py",
+
+  "cyclic": true,
+  "amino_acids": "essential_only",
+
+  "visualization": {
+    "enabled": true,
+    "width": 400,
+    "height": 400,
+    "format": "svg"
+  },
+
+  "output": {
+    "format": "smi",
+    "include_metadata": true,
+    "save_individual_files": true,
+    "create_summary": true
+  },
+
+  "processing": {
+    "validate_input": true,
+    "canonical_output": true,
+    "error_handling": "continue"
+  }
+}

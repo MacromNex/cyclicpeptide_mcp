@@ -1,0 +1,52 @@
+{
+  "_description": "Configuration for comprehensive cyclic peptide structure analysis",
+  "_source": "Extracted from examples/use_case_3_structure_analysis.py",
+
+  "output_format": "html",
+  "include_visualization": true,
+  "include_properties": true,
+  "include_sequence_analysis": true,
+  "include_drug_rules": true,
+
+  "visualization": {
+    "width": 600,
+    "height": 400,
+    "style": "detailed",
+    "include_in_report": true
+  },
+
+  "analysis": {
+    "detailed_breakdown": true,
+    "comparative_analysis": false,
+    "quality_assessment": true,
+    "molecular_descriptors": true,
+    "amino_acid_composition": true,
+    "drug_likeness": true
+  },
+
+  "report": {
+    "include_header": true,
+    "include_overview": true,
+    "include_sequence_section": true,
+    "include_properties_section": true,
+    "include_drug_rules_section": true,
+    "include_quality_section": true,
+    "include_footer": true,
+    "style": "professional"
+  },
+
+  "processing": {
+    "validate_input": true,
+    "detect_sequence": true,
+    "calculate_full_properties": true,
+    "generate_quality_scores": true,
+    "error_handling": "continue"
+  },
+
+  "output": {
+    "single_file_reports": true,
+    "generate_summary": true,
+    "include_svg_files": true,
+    "create_index": false
+  }
+}
