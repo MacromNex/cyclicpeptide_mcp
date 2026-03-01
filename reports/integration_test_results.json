@@ -1,0 +1,83 @@
+{
+  "test_date": "2025-12-31T10:04:22.912934",
+  "server_path": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/cyclicpeptide_mcp/src/server.py",
+  "env_path": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/cyclicpeptide_mcp/env",
+  "tests": {
+    "server_startup": {
+      "status": "passed",
+      "output": "Server import OK\n",
+      "error": "",
+      "command": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/cyclicpeptide_mcp/env/bin/python -c from src.server import mcp; print('Server import OK')"
+    },
+    "rdkit_import": {
+      "status": "passed",
+      "output": "RDKit OK\n",
+      "error": "",
+      "command": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/cyclicpeptide_mcp/env/bin/python -c from rdkit import Chem; print('RDKit OK')"
+    },
+    "tool_count": {
+      "status": "failed",
+      "expected_tools": 13,
+      "found_tools": 13,
+      "output": "",
+      "error": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 14, in <module>\nNameError: name '__file__' is not defined. Did you mean: '__name__'?\n",
+      "tools_match": true
+    },
+    "fastmcp_dev": {
+      "status": "passed",
+      "output": "Starting MCP inspector...\n\u2699\ufe0f Proxy server listening on localhost:6277\n\ud83d\udd11 Session token: bfcec54462ee8493d270ad8c846d4b70be27df7530571c9933351ccbc7892dfb\n   Use this token to authenticate requests or set DANGEROUSLY_OMIT_AUTH=true to disable auth\n",
+      "error": "",
+      "returncode": 124,
+      "note": "Exit code 124 (timeout) is expected"
+    },
+    "claude_mcp_connection": {
+      "status": "passed",
+      "output": "Checking MCP server health...\n\ncycpep-tools: /home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/cyclicpeptide_mcp/env/bin/python /home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/cyclicpeptide_mcp/src/server.py - \u2713 Connected\n",
+      "error": "",
+      "found_server": true
+    },
+    "sync_tool_execution": {
+      "status": "failed",
+      "output": "",
+      "error": "Traceback (most recent call last):\n  File \"<string>\", line 5, in <module>\nTypeError: 'FunctionTool' object is not callable\n",
+      "test_smiles": "CC(=O)NC1CCCC1C(=O)O"
+    },
+    "error_handling": {
+      "status": "failed",
+      "output": "",
+      "error": "Traceback (most recent call last):\n  File \"<string>\", line 5, in <module>\nTypeError: 'FunctionTool' object is not callable\n",
+      "test_invalid_smiles": "invalid_smiles_123"
+    },
+    "job_manager": {
+      "status": "failed",
+      "output": "",
+      "error": "Traceback (most recent call last):\n  File \"<string>\", line 5, in <module>\nTypeError: 'FunctionTool' object is not callable\n"
+    }
+  },
+  "issues": [],
+  "summary": {
+    "total_tests": 8,
+    "passed": 4,
+    "failed": 4,
+    "pass_rate": "50.0%",
+    "all_tests_passed": false
+  },
+  "test_data": {
+    "valid_smiles": [
+      "CC(=O)NC1CCCC1C(=O)O",
+      "C[C@@H]1NC(=O)CNC(=O)[C@@H]2CCCN2C1=O"
+    ],
+    "invalid_smiles": [
+      "invalid_smiles_123",
+      "not_a_smiles"
+    ],
+    "test_sequences": [
+      "GRGDSP",
+      "RGDFV",
+      "YIGSR"
+    ],
+    "invalid_sequences": [
+      "XYZABC123"
+    ]
+  }
+}

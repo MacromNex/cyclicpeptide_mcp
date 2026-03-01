@@ -1,0 +1,170 @@
+{
+  "project_name": "cycpep-tools",
+  "description": "MCP tools for cyclic peptide computational analysis",
+  "tools": [
+    {
+      "name": "calculate_cyclic_peptide_properties",
+      "type": "sync",
+      "description": "Calculate molecular properties for cyclic peptides (57+ descriptors)",
+      "example_prompt": "Calculate properties for C[C@@H]1NC(=O)CNC(=O)[C@@H]2CCCN2C1=O"
+    },
+    {
+      "name": "convert_sequence_to_structure",
+      "type": "sync",
+      "description": "Convert amino acid sequences to cyclic peptide SMILES",
+      "example_prompt": "Convert the peptide sequence GRGDSP to a cyclic peptide SMILES structure"
+    },
+    {
+      "name": "convert_structure_to_sequence",
+      "type": "sync",
+      "description": "Convert SMILES structures to amino acid sequences",
+      "example_prompt": "Convert SMILES to amino acid sequence"
+    },
+    {
+      "name": "preprocess_cyclic_peptide_data",
+      "type": "sync",
+      "description": "Clean and standardize peptide datasets",
+      "example_prompt": "Preprocess the dataset @examples/data/example_peptides.csv"
+    },
+    {
+      "name": "submit_comprehensive_structure_analysis",
+      "type": "submit",
+      "description": "Generate detailed HTML analysis reports",
+      "example_prompt": "Submit comprehensive structure analysis for SMILES"
+    },
+    {
+      "name": "submit_batch_property_calculation",
+      "type": "submit",
+      "description": "Calculate properties for large datasets",
+      "example_prompt": "Calculate properties for @examples/data/smiles.txt in batch"
+    },
+    {
+      "name": "submit_batch_sequence_conversion",
+      "type": "submit",
+      "description": "Convert multiple sequences to structures",
+      "example_prompt": "Convert multiple sequences from file to structures"
+    },
+    {
+      "name": "submit_batch_data_preprocessing",
+      "type": "submit",
+      "description": "Process large datasets with quality assessment",
+      "example_prompt": "Preprocess large dataset with quality filtering"
+    },
+    {
+      "name": "get_job_status",
+      "type": "management",
+      "description": "Check job progress and status",
+      "example_prompt": "Check the status of job abc12345"
+    },
+    {
+      "name": "get_job_result",
+      "type": "management",
+      "description": "Get results when job completed",
+      "example_prompt": "Get results for job abc12345"
+    },
+    {
+      "name": "get_job_log",
+      "type": "management",
+      "description": "View execution logs with tail option",
+      "example_prompt": "Show logs for job abc12345"
+    },
+    {
+      "name": "cancel_job",
+      "type": "management",
+      "description": "Cancel running job",
+      "example_prompt": "Cancel job abc12345"
+    },
+    {
+      "name": "list_jobs",
+      "type": "management",
+      "description": "List all jobs with optional status filter",
+      "example_prompt": "List all running jobs"
+    }
+  ],
+  "scripts": [
+    {
+      "name": "sequence_to_structure.py",
+      "description": "Convert amino acid sequences to cyclic peptide SMILES",
+      "example_command": "python scripts/sequence_to_structure.py --sequence 'GRGDSP' --visualize"
+    },
+    {
+      "name": "structure_to_sequence.py",
+      "description": "Convert SMILES structures to amino acid sequences",
+      "example_command": "python scripts/structure_to_sequence.py --smiles 'C[C@@H]1NC(=O)CNC(=O)[C@@H]2CCCN2C1=O'"
+    },
+    {
+      "name": "calculate_properties.py",
+      "description": "Calculate comprehensive molecular properties",
+      "example_command": "python scripts/calculate_properties.py --smiles 'C[C@@H]1NC(=O)CNC(=O)[C@@H]2CCCN2C1=O' --format csv"
+    },
+    {
+      "name": "preprocess_data.py",
+      "description": "Preprocess and standardize peptide datasets",
+      "example_command": "python scripts/preprocess_data.py --input examples/data/example_peptides.csv --output cleaned.csv"
+    },
+    {
+      "name": "analyze_structure.py",
+      "description": "Generate comprehensive HTML analysis reports",
+      "example_command": "python scripts/analyze_structure.py --smiles 'C[C@@H]1NC(=O)CNC(=O)[C@@H]2CCCN2C1=O' --output report.html"
+    }
+  ],
+  "demo_data": [
+    {
+      "file": "sequences.txt",
+      "description": "Sample peptide sequences (APG, GFPVFP, WAGFP, CCGP, FGPP - 5 sequences)",
+      "used_by": ["convert_sequence_to_structure", "submit_batch_sequence_conversion"]
+    },
+    {
+      "file": "smiles.txt",
+      "description": "Sample SMILES structures (3 cyclic peptides)",
+      "used_by": ["calculate_properties", "structure_analysis", "all property tools"]
+    },
+    {
+      "file": "monomer.tsv",
+      "description": "546 monomer database for extended amino acids",
+      "used_by": ["structure_analysis", "comprehensive_analysis"]
+    },
+    {
+      "file": "example_peptides.csv",
+      "description": "Mixed quality dataset for preprocessing testing",
+      "used_by": ["preprocess_cyclic_peptide_data", "data_cleaning"]
+    },
+    {
+      "file": "Chemical_P.csv",
+      "description": "Reference chemical properties",
+      "used_by": ["property_validation", "reference_data"]
+    },
+    {
+      "file": "models/GA_GCN.pth",
+      "description": "Pre-trained graph neural network model (44KB)",
+      "used_by": ["graph_alignment", "similarity_analysis"]
+    }
+  ],
+  "configs": [
+    {
+      "file": "sequence_to_structure_config.json",
+      "description": "Configuration for sequence conversion",
+      "parameters": {"cyclic": true, "visualization": {"enabled": true}, "output": {"format": "smi"}}
+    },
+    {
+      "file": "calculate_properties_config.json",
+      "description": "Configuration for property calculation",
+      "parameters": {"include_fingerprints": true, "include_descriptors": true, "output_format": "json"}
+    },
+    {
+      "file": "preprocess_data_config.json",
+      "description": "Configuration for data preprocessing",
+      "parameters": {"standardization": {"canonicalize_smiles": true}, "quality_assessment": {"enable_scoring": true}}
+    },
+    {
+      "file": "analyze_structure_config.json",
+      "description": "Configuration for structure analysis",
+      "parameters": {"include_visualization": true, "report_sections": "all"}
+    },
+    {
+      "file": "default_config.json",
+      "description": "Global default settings",
+      "parameters": {"global": {"validate_inputs": true}, "visualization": {"enabled": false}}
+    }
+  ]
+}
